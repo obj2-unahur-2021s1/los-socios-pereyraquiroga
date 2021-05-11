@@ -37,6 +37,10 @@ class ClienteTest : DescribeSpec({
     LasLauchas(estella.propina()).propina().shouldBe(500)
   }
 
-
+  describe("Un/a cliente indiferente viviendo en barrio las Torres") {
+    val estella = EstadoAnimoIndiferente(costoPedido = 300, plataBolsillo = 200)
+    estella.propina().shouldBe(200)
+    LasTorres(estella.propina()).propina().shouldBe(200)
+  }
 })
 
