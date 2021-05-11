@@ -30,20 +30,28 @@ class LasRosas(plataBolsillo: Int):Cliente(plataBolsillo){
 }
 class LasLauchas(plataBolsillo: Int) :Cliente(plataBolsillo ){
     override fun propina(): Int {
-        TODO("Not yet implemented")
+        return plataBolsillo/2
     }
 }
 
-class BarrioVerde(plataBolsillo: Int):Cliente(plataBolsillo ){
-    override fun propina(): Int {
-        TODO("Not yet implemented")
-    }
-}
+ class BarrioVerde(plataBolsillo:Int  ):Cliente(plataBolsillo ){
 
-class LasTorres(plataBolsillo: Int): Cliente(plataBolsillo ) {
-    override fun propina(): Int {
-        TODO("Not yet implemented")
+    override fun propina(): Int =
+        if (plataBolsillo >= 200) {
+            plataBolsillo
+        }
+
+        else { error("tiene que ser mayor a 200")}
+
     }
+
+
+
+
+
+
+ class LasTorres(plataBolsillo: Int): Cliente(plataBolsillo ) {
+        override fun propina(): Int{return plataBolsillo}
 
 
 }
