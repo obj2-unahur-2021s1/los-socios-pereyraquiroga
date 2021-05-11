@@ -8,8 +8,8 @@ class ClienteTest : DescribeSpec({
 
   describe("Un/a cliente feliz viviendo en las rosas") {
     val estella = EstadoAnimoFeliz(200,100)
-    estella.propinaSegunAnimo().shouldBe(50)
-
+    estella.propina().shouldBe(50)
+     LasRosas(estella.propina()).propina().shouldBe(100)
 
   }
 })

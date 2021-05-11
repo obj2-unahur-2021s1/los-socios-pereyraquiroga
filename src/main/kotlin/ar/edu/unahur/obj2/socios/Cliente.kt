@@ -1,49 +1,55 @@
 package ar.edu.unahur.obj2.socios
 
-  abstract class Cliente(val plataBolsillo: Int) {
 
-      abstract fun propinaSegunAnimo():Int
- }
+abstract class Cliente(val plataBolsillo: Int) {
 
-   class EstadoAnimoFeliz(val costoPedido : Int, plataBolsillo: Int) : Cliente( plataBolsillo){
+    abstract fun propina():Int
 
-    override fun propinaSegunAnimo()= costoPedido*25 /100
-}
-  class EstadoAnimoEnojado(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
-    override fun propinaSegunAnimo(): Int = 0
 }
 
- class EstadoAnimoIndiferente(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
-    override fun propinaSegunAnimo(): Int = plataBolsillo
+class EstadoAnimoFeliz(val costoPedido : Int, plataBolsillo: Int) : Cliente( plataBolsillo){
+
+    override fun propina()= costoPedido*25 /100
+}
+class EstadoAnimoEnojado(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
+    override fun propina(): Int = 0
 }
 
- class EstadoAnimoResfriado(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
-    override fun propinaSegunAnimo(): Int = costoPedido
+class EstadoAnimoIndiferente(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
+    override fun propina(): Int = plataBolsillo
 }
 
-interface Barrio {
-    fun propinaOtorga() :Int
+class EstadoAnimoResfriado(val costoPedido: Int,  plataBolsillo: Int):Cliente(plataBolsillo){
+    override fun propina(): Int = costoPedido
 }
 
-class LasRosas() : Barrio{
-    override fun propinaOtorga() = 50
+class LasRosas(plataBolsillo: Int):Cliente(plataBolsillo){
+    override fun propina(): Int {
+        return plataBolsillo+50
+    }
 }
-
-class LasLauchas() :Barrio{
-    override fun propinaOtorga()= 1/2
-}
-
-class BarrioVerde():Barrio{
-    override fun propinaOtorga(): Int {
+class LasLauchas(plataBolsillo: Int) :Cliente(plataBolsillo ){
+    override fun propina(): Int {
         TODO("Not yet implemented")
     }
 }
 
-class LasTorres(): Barrio{
-    override fun propinaOtorga(): Int {
+class BarrioVerde(plataBolsillo: Int):Cliente(plataBolsillo ){
+    override fun propina(): Int {
         TODO("Not yet implemented")
     }
 }
+
+class LasTorres(plataBolsillo: Int): Cliente(plataBolsillo ) {
+    override fun propina(): Int {
+        TODO("Not yet implemented")
+    }
+
+
+}
+
+
+
 
 
 
